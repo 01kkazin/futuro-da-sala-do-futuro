@@ -1,758 +1,660 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Método Lucrativo Digital | Curso Premium de Marketing Digital</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        gold: {
-                            light: '#f0e6cc',
-                            DEFAULT: '#d4af37',
-                            dark: '#b8860b',
-                            accent: '#e6c55a',
-                        },
-                        dark: {
-                            DEFAULT: '#0c0c0c',
-                            light: '#1a1a1a',
-                            medium: '#141414',
-                        }
-                    },
-                    fontFamily: {
-                        'montserrat': ['Montserrat', 'sans-serif'],
-                    },
-                }
-            }
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Método Lucrativo - Domine o Marketing Digital</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+        :root {
+            --gold-light: #f0d080;
+            --gold-medium: #d4af37;
+            --gold-dark: #996515;
+            --black-rich: #121212;
+            --black-medium: #1a1a1a;
         }
-    </script>
-    <style>
+        
         body {
+            box-sizing: border-box;
             font-family: 'Montserrat', sans-serif;
-            background-color: #0c0c0c;
+            background-color: var(--black-rich);
             color: #fff;
         }
         
-        .gradient-text {
-            background: linear-gradient(90deg, #FFD700, #FFA500);
+        .gold-text {
+            color: var(--gold-medium);
+        }
+        
+        .gold-gradient {
+            background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, var(--gold-medium), var(--gold-dark));
+            transition: all 0.3s ease;
+            transform: translateY(0);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.5);
+        }
+        
+        .testimonial-card {
+            background-color: var(--black-medium);
+            border: 1px solid var(--gold-dark);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2);
+        }
+        
+        .gold-border {
+            border: 2px solid var(--gold-medium);
+        }
+        
+        .module-card {
+            background-color: var(--black-medium);
+            border-left: 3px solid var(--gold-medium);
+            transition: all 0.3s ease;
+        }
+        
+        .module-card:hover {
+            background-color: rgba(26, 26, 26, 0.9);
+            transform: translateX(5px);
+        }
+        
+        .countdown-box {
+            background-color: var(--black-medium);
+            border: 1px solid var(--gold-dark);
+        }
+        
+        .bonus-card {
+            background-color: rgba(26, 26, 26, 0.8);
+            border: 1px solid var(--gold-medium);
+            transition: all 0.3s ease;
+        }
+        
+        .bonus-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.2);
+        }
+        
+        .guarantee-badge {
+            background: radial-gradient(circle, var(--gold-light), var(--gold-dark));
+            color: var(--black-rich);
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .highlight-text {
+            background: linear-gradient(45deg, var(--gold-light), var(--gold-dark));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
         
-        .gold-border {
-            border: 2px solid #d4af37;
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
-        }
-        
-        .cta-button {
-            background: linear-gradient(90deg, #FFD700, #FFA500);
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4);
-        }
-        
-        .testimonial {
-            border-left: 4px solid #FFD700;
-        }
-        
         .countdown-timer {
-            font-weight: 700;
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+            border: 2px solid var(--gold-medium);
         }
         
-        .gold-card {
-            background: #1a1a1a;
-            border: 1px solid #FFD700;
-            box-shadow: 0 8px 32px rgba(255, 215, 0, 0.15);
-            transition: all 0.4s ease;
+        .countdown-item {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--gold-medium);
         }
         
-        .gold-card:hover {
-            box-shadow: 0 12px 40px rgba(255, 215, 0, 0.25);
-            transform: translateY(-2px);
-        }
-        
-        .highlight {
-            position: relative;
-            display: inline-block;
-        }
-        
-        .highlight:after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
             left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, #FFD700, #FFA500);
+            right: 0;
+            background: linear-gradient(135deg, #1a1a1a, #000);
+            border-top: 2px solid var(--gold-medium);
+            z-index: 1000;
+            transition: transform 0.3s ease;
         }
         
-        .gold-icon {
-            color: #FFD700;
-            filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.3));
-        }
-        
-        .guarantee-badge {
-            position: relative;
-            background: #1a1a1a;
-            border: 2px solid #FFD700;
-            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
-        }
-        
-        .hero-gradient {
-            background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,1) 100%);
-        }
-        
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-        }
-        
-        @media (max-width: 768px) {
-            .section-title {
-                font-size: 1.8rem;
-            }
-        }
-        
-        .step-card {
-            border-radius: 10px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-        
-        .step-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .step-number {
-            font-size: 5rem;
-            font-weight: 800;
-            line-height: 1;
-            opacity: 0.1;
-            position: absolute;
-            top: -20px;
-            right: 10px;
-        }
-        
-        .bonus-tag {
-            background: linear-gradient(90deg, #FFD700, #FFA500);
-            transform: rotate(-2deg);
+        .sticky-cta.hidden {
+            transform: translateY(100%);
         }
     </style>
-</head>
-<body class="font-montserrat">
-    <!-- Hero Section -->
-    <header class="relative min-h-screen flex items-center justify-center px-4 py-20 bg-dark overflow-hidden">
-        <div class="absolute inset-0 z-0 bg-[url('https://images.unsplash.com/photo-1579621970795-87facc2f976d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')] bg-cover bg-center">
-            <div class="absolute inset-0 hero-gradient"></div>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="/_sdk/element_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="bg-black text-white"><!-- Header -->
+  <header class="py-6 bg-black">
+   <div class="container mx-auto px-4 text-center">
+    <h1 class="text-2xl md:text-3xl font-bold gold-text">MÉTODO LUCRATIVO</h1>
+    <p class="text-sm text-gray-400 mt-2">O Sistema Completo para Criar Renda Online</p>
+   </div>
+  </header><!-- Hero Section -->
+  <section class="py-16 bg-gradient-to-b from-black to-gray-900">
+   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+     <h2 class="text-4xl md:text-6xl font-bold mb-6"><span class="block">Descubra o</span> <span class="highlight-text">Método Secreto</span> <span class="block">que Está Gerando</span> <span class="gold-text">R$10.000+ por Mês</span></h2>
+     <p class="text-xl md:text-2xl text-gray-300 mb-8">Sistema completo e passo a passo para criar um negócio digital lucrativo do zero, mesmo sem experiência</p><!-- Countdown Timer -->
+     <div class="countdown-timer rounded-lg p-6 mb-8 max-w-md mx-auto">
+      <p class="text-lg font-bold mb-4 gold-text">⚡ OFERTA ESPECIAL EXPIRA EM:</p>
+      <div class="flex justify-center space-x-4">
+       <div class="countdown-item rounded-lg p-3 text-center">
+        <div class="text-2xl font-bold gold-text" id="hours">
+         23
         </div>
-        
-        <div class="container mx-auto max-w-6xl relative z-10">
-            <div class="text-center mb-8">
-                <h1 class="text-4xl md:text-7xl font-black mb-6 leading-tight">
-                    <span class="gradient-text">EBOOK GRÁTIS</span>
-                </h1>
-                <p class="text-2xl md:text-4xl font-bold text-white max-w-4xl mx-auto mb-8">
-                    DESCUBRA COMO CRIAR UM NEGÓCIO DIGITAL LUCRATIVO DO ZERO
-                </p>
-                <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
-                    O método comprovado que já transformou a vida de mais de <span class="font-bold text-yellow-400">1.500 alunos</span> e pode transformar a sua também.
-                </p>
-            </div>
-            
-            <div class="flex flex-col items-center justify-center mt-10">
-                <div class="w-full max-w-3xl">
-                    <div class="relative aspect-video rounded-xl overflow-hidden gold-border">
-                        <div class="absolute inset-0 bg-dark-light flex items-center justify-center">
-                            <div class="text-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 text-yellow-400 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                                <p class="mt-4 text-lg font-medium">Assista ao vídeo e descubra como transformar seu conhecimento em lucro</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="mt-10 w-full max-w-2xl">
-                    <div class="bg-dark-light p-6 rounded-lg text-center gold-card">
-                        <p class="text-lg mb-4">A oferta especial termina em:</p>
-                        <div class="countdown-timer flex justify-center gap-4 text-2xl md:text-4xl mb-6">
-                            <div class="flex flex-col items-center">
-                                <span class="text-yellow-400">23</span>
-                                <span class="text-xs text-gray-400">HORAS</span>
-                            </div>
-                            <div class="text-yellow-400">:</div>
-                            <div class="flex flex-col items-center">
-                                <span class="text-yellow-400">59</span>
-                                <span class="text-xs text-gray-400">MINUTOS</span>
-                            </div>
-                            <div class="text-yellow-400">:</div>
-                            <div class="flex flex-col items-center">
-                                <span class="text-yellow-400">59</span>
-                                <span class="text-xs text-gray-400">SEGUNDOS</span>
-                            </div>
-                        </div>
-                        <a href="#formulario" class="cta-button block w-full py-4 px-8 text-xl font-bold text-dark rounded-lg">
-                            QUERO RECEBER O EBOOK GRÁTIS
-                        </a>
-                        <p class="mt-4 text-sm text-gray-400">Apenas por tempo limitado</p>
-                    </div>
-                </div>
-            </div>
+        <div class="text-xs text-gray-400">
+         HORAS
         </div>
-    </header>
-
-    <!-- About Section -->
-    <section class="py-20 bg-dark-light">
-        <div class="container mx-auto max-w-6xl px-4">
-            <div class="text-center mb-16">
-                <h2 class="section-title">
-                    <span class="gradient-text">O QUE VOCÊ VAI APRENDER</span>
-                </h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                    Neste ebook gratuito, você vai descobrir os segredos para criar um negócio digital lucrativo mesmo começando do zero.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="gold-card rounded-xl p-8 text-center">
-                    <div class="w-16 h-16 bg-yellow-400/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 gold-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 text-yellow-400">Como Identificar Nichos Lucrativos</h3>
-                    <p class="text-gray-300">Descubra como encontrar oportunidades de mercado com alta demanda e baixa concorrência para maximizar seus resultados.</p>
-                </div>
-                
-                <div class="gold-card rounded-xl p-8 text-center">
-                    <div class="w-16 h-16 bg-yellow-400/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 gold-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 text-yellow-400">Estratégias de Marketing Digital</h3>
-                    <p class="text-gray-300">Aprenda as técnicas mais eficientes para atrair clientes qualificados e converter visitantes em compradores.</p>
-                </div>
-                
-                <div class="gold-card rounded-xl p-8 text-center">
-                    <div class="w-16 h-16 bg-yellow-400/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 gold-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 text-yellow-400">Monetização Inteligente</h3>
-                    <p class="text-gray-300">Conheça os diferentes modelos de negócio digital e descubra qual é o mais adequado para o seu perfil e objetivos.</p>
-                </div>
-            </div>
+       </div>
+       <div class="countdown-item rounded-lg p-3 text-center">
+        <div class="text-2xl font-bold gold-text" id="minutes">
+         59
         </div>
-    </section>
-
-    <!-- Steps Section -->
-    <section class="py-20 bg-dark">
-        <div class="container mx-auto max-w-6xl px-4">
-            <div class="text-center mb-16">
-                <h2 class="section-title">
-                    <span class="gradient-text">3 PASSOS PARA O SUCESSO DIGITAL</span>
-                </h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                    Siga este método comprovado para construir seu negócio online do zero.
-                </p>
-            </div>
-            
-            <div class="space-y-12">
-                <div class="step-card bg-dark-light p-8 rounded-xl relative overflow-hidden">
-                    <div class="step-number text-yellow-400">1</div>
-                    <div class="flex flex-col md:flex-row gap-8 items-center">
-                        <div class="w-full md:w-1/3">
-                            <div class="bg-yellow-400/10 p-6 rounded-xl">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 mx-auto gold-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="w-full md:w-2/3">
-                            <h3 class="text-2xl font-bold mb-4 text-yellow-400">ENCONTRE SEU NICHO</h3>
-                            <p class="text-gray-300 mb-4">
-                                O primeiro passo para o sucesso é identificar um nicho de mercado com demanda real e pouca concorrência qualificada. No ebook, você vai descobrir exatamente como encontrar essas oportunidades ocultas.
-                            </p>
-                            <ul class="space-y-2">
-                                <li class="flex items-center gap-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 gold-icon" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span>Técnicas de pesquisa de mercado</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 gold-icon" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span>Análise de concorrência</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 gold-icon" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span>Validação de ideias</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="step-card bg-dark-light p-8 rounded-xl relative overflow-hidden">
-                    <div class="step-number text-yellow-400">2</div>
-                    <div class="flex flex-col md:flex-row gap-8 items-center">
-                        <div class="w-full md:w-1/3">
-                            <div class="bg-yellow-400/10 p-6 rounded-xl">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 mx-auto gold-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="w-full md:w-2/3">
-                            <h3 class="text-2xl font-bold mb-4 text-yellow-400">CRIE SUA OFERTA</h3>
-                            <p class="text-gray-300 mb-4">
-                                Aprenda a desenvolver produtos digitais de alta qualidade que resolvem problemas reais e geram valor para seus clientes, mesmo sem experiência prévia.
-                            </p>
-                            <ul class="space-y-2">
-                                <li class="flex items-center gap-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 gold-icon" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span>Estruturação de conteúdo</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 gold-icon" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span>Precificação estratégica</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 gold-icon" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span>Criação de proposta de valor</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="step-card bg-dark-light p-8 rounded-xl relative overflow-hidden">
-                    <div class="step-number text-yellow-400">3</div>
-                    <div class="flex flex-col md:flex-row gap-8 items-center">
-                        <div class="w-full md:w-1/3">
-                            <div class="bg-yellow-400/10 p-6 rounded-xl">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 mx-auto gold-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="w-full md:w-2/3">
-                            <h3 class="text-2xl font-bold mb-4 text-yellow-400">ESCALE SEU NEGÓCIO</h3>
-                            <p class="text-gray-300 mb-4">
-                                Domine as estratégias de marketing digital para atrair clientes qualificados e escalar seu negócio de forma consistente e sustentável.
-                            </p>
-                            <ul class="space-y-2">
-                                <li class="flex items-center gap-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 gold-icon" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span>Tráfego pago e orgânico</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 gold-icon" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span>Funis de vendas</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 gold-icon" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span>Automação de marketing</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="mt-12 text-center">
-                <a href="#formulario" class="cta-button inline-block py-4 px-12 text-xl font-bold text-dark rounded-lg">
-                    QUERO RECEBER O EBOOK GRÁTIS AGORA!
-                </a>
-            </div>
+        <div class="text-xs text-gray-400">
+         MIN
         </div>
-    </section>
-
-    <!-- Author Section -->
-    <section class="py-20 bg-dark-light">
-        <div class="container mx-auto max-w-5xl px-4">
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="w-full md:w-1/3">
-                    <div class="rounded-full overflow-hidden border-4 border-yellow-400 w-64 h-64 mx-auto">
-                        <div class="w-full h-full bg-yellow-400/20 flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-32 w-32 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="w-full md:w-2/3">
-                    <h2 class="section-title">
-                        <span class="gradient-text">CONHEÇA O AUTOR</span>
-                    </h2>
-                    <h3 class="text-2xl font-bold mb-4">Especialista em Marketing Digital</h3>
-                    <p class="text-gray-300 mb-6">
-                        Com mais de 10 anos de experiência no mercado digital, já ajudei mais de 1.500 alunos a construírem negócios lucrativos online. Minha missão é democratizar o conhecimento sobre marketing digital e ajudar pessoas comuns a conquistarem sua liberdade financeira.
-                    </p>
-                    <p class="text-gray-300 mb-6">
-                        Ao longo da minha carreira, desenvolvi um método simples e replicável que permite a qualquer pessoa, mesmo sem experiência prévia, criar um negócio digital lucrativo do zero.
-                    </p>
-                    <div class="flex items-center gap-4">
-                        <div class="flex">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                            </svg>
-                        </div>
-                        <span class="text-gray-300">Avaliação 4.9/5 por mais de 1.500 alunos</span>
-                    </div>
-                </div>
-            </div>
+       </div>
+       <div class="countdown-item rounded-lg p-3 text-center">
+        <div class="text-2xl font-bold gold-text" id="seconds">
+         45
         </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="py-20 bg-dark">
-        <div class="container mx-auto max-w-6xl px-4">
-            <div class="text-center mb-16">
-                <h2 class="section-title">
-                    <span class="gradient-text">O QUE DIZEM NOSSOS LEITORES</span>
-                </h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                    Veja como o ebook já transformou a vida de centenas de pessoas.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="gold-card rounded-xl p-8">
-                    <div class="testimonial pl-4 mb-6">
-                        <p class="text-gray-300 italic">"Este ebook mudou completamente minha visão sobre negócios digitais. Em apenas 30 dias após aplicar as estratégias, consegui criar meu primeiro produto digital e fazer minhas primeiras vendas online."</p>
-                    </div>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-yellow-400/20 rounded-full flex items-center justify-center">
-                            <span class="text-yellow-400 font-bold">RM</span>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-yellow-400">Ricardo Mendes</h4>
-                            <p class="text-sm text-gray-400">São Paulo, SP</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gold-card rounded-xl p-8">
-                    <div class="testimonial pl-4 mb-6">
-                        <p class="text-gray-300 italic">"Eu estava completamente perdida no mundo digital. Com as dicas do ebook, consegui identificar um nicho lucrativo e hoje tenho um negócio online que me permite trabalhar de qualquer lugar."</p>
-                    </div>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-yellow-400/20 rounded-full flex items-center justify-center">
-                            <span class="text-yellow-400 font-bold">CS</span>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-yellow-400">Carla Santos</h4>
-                            <p class="text-sm text-gray-400">Rio de Janeiro, RJ</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gold-card rounded-xl p-8">
-                    <div class="testimonial pl-4 mb-6">
-                        <p class="text-gray-300 italic">"As estratégias de marketing digital apresentadas no ebook são simplesmente incríveis. Consegui triplicar meu faturamento em apenas 2 meses aplicando o que aprendi."</p>
-                    </div>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-yellow-400/20 rounded-full flex items-center justify-center">
-                            <span class="text-yellow-400 font-bold">MA</span>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-yellow-400">Marcos Almeida</h4>
-                            <p class="text-sm text-gray-400">Belo Horizonte, MG</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gold-card rounded-xl p-8">
-                    <div class="testimonial pl-4 mb-6">
-                        <p class="text-gray-300 italic">"Eu não sabia nada sobre marketing digital e tinha medo de começar. Este ebook me deu um passo a passo claro e objetivo que me permitiu criar meu primeiro negócio online com confiança."</p>
-                    </div>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-yellow-400/20 rounded-full flex items-center justify-center">
-                            <span class="text-yellow-400 font-bold">PL</span>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-yellow-400">Paula Lima</h4>
-                            <p class="text-sm text-gray-400">Curitiba, PR</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="text-xs text-gray-400">
+         SEG
         </div>
-    </section>
-
-    <!-- Bonus Section -->
-    <section class="py-20 bg-dark-light">
-        <div class="container mx-auto max-w-6xl px-4">
-            <div class="text-center mb-16">
-                <span class="bonus-tag inline-block py-2 px-6 rounded-full text-dark font-bold mb-6">BÔNUS EXCLUSIVOS</span>
-                <h2 class="section-title">
-                    <span class="gradient-text">ALÉM DO EBOOK, VOCÊ TAMBÉM RECEBE</span>
-                </h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                    Bônus especiais disponíveis apenas por tempo limitado.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="gold-card rounded-xl p-8 relative overflow-hidden">
-                    <div class="absolute top-0 right-0">
-                        <div class="bg-yellow-400 text-dark font-bold py-1 px-4 rounded-bl-lg text-sm">
-                            VALOR: R$97
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 bg-yellow-400/20 rounded-full flex items-center justify-center shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 gold-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold mb-2 text-yellow-400">Checklist: "7 Passos Para Criar Seu Primeiro Produto Digital"</h3>
-                            <p class="text-gray-300">Um guia prático e objetivo para você criar seu primeiro produto digital do zero, mesmo sem experiência prévia.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gold-card rounded-xl p-8 relative overflow-hidden">
-                    <div class="absolute top-0 right-0">
-                        <div class="bg-yellow-400 text-dark font-bold py-1 px-4 rounded-bl-lg text-sm">
-                            VALOR: R$147
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 bg-yellow-400/20 rounded-full flex items-center justify-center shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 gold-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold mb-2 text-yellow-400">Aula Exclusiva: "Como Criar Anúncios Que Vendem"</h3>
-                            <p class="text-gray-300">Uma masterclass completa sobre como criar campanhas de anúncios altamente rentáveis, mesmo com pouco investimento.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="mt-12 text-center">
-                <div class="gold-card rounded-xl p-8 max-w-3xl mx-auto">
-                    <h3 class="text-2xl font-bold mb-4 text-yellow-400">Valor Total dos Bônus: <span class="line-through">R$244</span></h3>
-                    <p class="text-xl text-gray-300 mb-6">Tudo isso incluído <span class="font-bold text-yellow-400">GRATUITAMENTE</span> para quem se inscrever hoje!</p>
-                    <a href="#formulario" class="cta-button block w-full py-4 px-8 text-xl font-bold text-dark rounded-lg">
-                        QUERO RECEBER O EBOOK E OS BÔNUS GRÁTIS!
-                    </a>
-                </div>
-            </div>
+       </div>
+      </div>
+     </div>
+     <div class="pulse"><a href="https://kiwify.app/omIfoVi?afid=tOG8EtV6" class="cta-button inline-block py-4 px-8 text-xl font-bold rounded-lg text-black uppercase tracking-wider"> QUERO COMEÇAR AGORA! </a>
+     </div>
+     <p class="text-sm text-gray-400 mt-4">✅ Acesso imediato • ✅ Garantia de 7 dias • ✅ Suporte completo</p>
+    </div>
+   </div>
+  </section><!-- Problem Section -->
+  <section class="py-16 bg-black">
+   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+     <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Você Está <span class="gold-text">Cansado</span> de...</h2>
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+      <div class="flex items-start space-x-4">
+       <div class="w-8 h-8 rounded-full bg-red-600 flex items-center justify-center flex-shrink-0 mt-1"><span class="text-white font-bold">✗</span>
+       </div>
+       <p class="text-lg text-gray-300">Trabalhar para enriquecer os outros enquanto você mal consegue pagar as contas?</p>
+      </div>
+      <div class="flex items-start space-x-4">
+       <div class="w-8 h-8 rounded-full bg-red-600 flex items-center justify-center flex-shrink-0 mt-1"><span class="text-white font-bold">✗</span>
+       </div>
+       <p class="text-lg text-gray-300">Perder tempo precioso com sua família por causa de um emprego que não te valoriza?</p>
+      </div>
+      <div class="flex items-start space-x-4">
+       <div class="w-8 h-8 rounded-full bg-red-600 flex items-center justify-center flex-shrink-0 mt-1"><span class="text-white font-bold">✗</span>
+       </div>
+       <p class="text-lg text-gray-300">Viver no vermelho todo mês, sem conseguir realizar seus sonhos?</p>
+      </div>
+      <div class="flex items-start space-x-4">
+       <div class="w-8 h-8 rounded-full bg-red-600 flex items-center justify-center flex-shrink-0 mt-1"><span class="text-white font-bold">✗</span>
+       </div>
+       <p class="text-lg text-gray-300">Tentar várias "fórmulas mágicas" na internet que nunca funcionam de verdade?</p>
+      </div>
+     </div>
+     <div class="text-center">
+      <h3 class="text-2xl font-bold mb-4"><span class="gold-text">PARE DE SOFRER!</span> Existe uma solução...</h3>
+     </div>
+    </div>
+   </div>
+  </section><!-- Solution Section -->
+  <section class="py-16 bg-gradient-to-b from-black to-gray-900">
+   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+     <h2 class="text-3xl md:text-5xl font-bold mb-6">Apresento o <span class="highlight-text">MÉTODO LUCRATIVO</span></h2>
+     <p class="text-xl text-gray-300 mb-8">O sistema completo que já transformou a vida de mais de 1.200 pessoas, gerando resultados reais e duradouros no marketing digital.</p>
+     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+      <div class="text-center">
+       <div class="w-16 h-16 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-600 flex items-center justify-center mx-auto mb-4"><span class="text-2xl font-bold text-black">1</span>
+       </div>
+       <h3 class="text-xl font-bold mb-2 gold-text">Sistema Testado</h3>
+       <p class="text-gray-300">Método validado por centenas de alunos com resultados comprovados</p>
+      </div>
+      <div class="text-center">
+       <div class="w-16 h-16 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-600 flex items-center justify-center mx-auto mb-4"><span class="text-2xl font-bold text-black">2</span>
+       </div>
+       <h3 class="text-xl font-bold mb-2 gold-text">Passo a Passo</h3>
+       <p class="text-gray-300">Instruções claras e detalhadas, sem deixar nada para trás</p>
+      </div>
+      <div class="text-center">
+       <div class="w-16 h-16 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-600 flex items-center justify-center mx-auto mb-4"><span class="text-2xl font-bold text-black">3</span>
+       </div>
+       <h3 class="text-xl font-bold mb-2 gold-text">Suporte Total</h3>
+       <p class="text-gray-300">Acompanhamento completo até você alcançar seus objetivos</p>
+      </div>
+     </div>
+     <div class="pulse"><a href="https://kiwify.app/omIfoVi?afid=tOG8EtV6" class="cta-button inline-block py-4 px-8 text-xl font-bold rounded-lg text-black uppercase tracking-wider"> QUERO TRANSFORMAR MINHA VIDA! </a>
+     </div>
+    </div>
+   </div>
+  </section><!-- Modules Section -->
+  <section class="py-16 bg-black">
+   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+     <h2 class="text-3xl md:text-4xl font-bold mb-2 text-center">O Que Você Vai <span class="gold-text">Aprender</span></h2>
+     <p class="text-center text-gray-300 mb-12">6 módulos completos com mais de 40 horas de conteúdo exclusivo</p>
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="module-card p-6 rounded-lg">
+       <div class="flex items-center mb-4">
+        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-600 flex items-center justify-center text-black font-bold text-xl">
+         1
         </div>
-    </section>
-
-    <!-- Form Section -->
-    <section id="formulario" class="py-20 bg-dark">
-        <div class="container mx-auto max-w-4xl px-4">
-            <div class="text-center mb-12">
-                <h2 class="section-title">
-                    <span class="gradient-text">GARANTA SEU EBOOK GRÁTIS AGORA</span>
-                </h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                    Preencha o formulário abaixo e receba o ebook + bônus exclusivos diretamente no seu email.
-                </p>
-            </div>
-            
-            <div class="gold-card rounded-xl p-8">
-                <form class="space-y-6">
-                    <div>
-                        <label for="name" class="block text-yellow-400 font-medium mb-2">Seu Nome</label>
-                        <input type="text" id="name" class="w-full bg-dark border border-yellow-400/50 rounded-lg p-3 text-white focus:outline-none focus:border-yellow-400" placeholder="Digite seu nome completo">
-                    </div>
-                    
-                    <div>
-                        <label for="email" class="block text-yellow-400 font-medium mb-2">Seu Melhor Email</label>
-                        <input type="email" id="email" class="w-full bg-dark border border-yellow-400/50 rounded-lg p-3 text-white focus:outline-none focus:border-yellow-400" placeholder="Digite seu email">
-                    </div>
-                    
-                    <div>
-                        <label for="phone" class="block text-yellow-400 font-medium mb-2">Seu WhatsApp</label>
-                        <input type="tel" id="phone" class="w-full bg-dark border border-yellow-400/50 rounded-lg p-3 text-white focus:outline-none focus:border-yellow-400" placeholder="Digite seu número com DDD">
-                    </div>
-                    
-                    <div class="pt-4">
-                        <button type="submit" class="cta-button w-full py-4 px-8 text-xl font-bold text-dark rounded-lg">
-                            QUERO RECEBER MEU EBOOK GRÁTIS
-                        </button>
-                    </div>
-                    
-                    <div class="text-center">
-                        <p class="text-sm text-gray-400">Seus dados estão 100% seguros. Não compartilhamos suas informações.</p>
-                    </div>
-                </form>
-            </div>
-            
-            <div class="mt-12 flex items-center justify-center gap-6">
-                <div class="flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 gold-icon" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
-                    </svg>
-                    <span class="text-gray-300">Dados protegidos</span>
-                </div>
-                <div class="flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 gold-icon" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                    </svg>
-                    <span class="text-gray-300">Entrega imediata</span>
-                </div>
-                <div class="flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 gold-icon" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z" />
-                    </svg>
-                    <span class="text-gray-300">100% gratuito</span>
-                </div>
-            </div>
+        <h3 class="ml-4 text-xl font-bold gold-text">Fundamentos do Marketing Digital</h3>
+       </div>
+       <ul class="text-gray-300 space-y-2">
+        <li>• Como funciona o marketing digital na prática</li>
+        <li>• Os pilares de um negócio online lucrativo</li>
+        <li>• Mindset do empreendedor digital</li>
+        <li>• Ferramentas essenciais (gratuitas e pagas)</li>
+        <li>• Como escolher seu nicho de mercado</li>
+       </ul>
+      </div>
+      <div class="module-card p-6 rounded-lg">
+       <div class="flex items-center mb-4">
+        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-600 flex items-center justify-center text-black font-bold text-xl">
+         2
         </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="py-20 bg-dark-light">
-        <div class="container mx-auto max-w-4xl px-4">
-            <div class="text-center mb-16">
-                <h2 class="section-title">
-                    <span class="gradient-text">PERGUNTAS FREQUENTES</span>
-                </h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                    Tudo o que você precisa saber antes de solicitar seu ebook gratuito.
-                </p>
-            </div>
-            
-            <div class="space-y-6">
-                <div class="gold-card rounded-xl p-6">
-                    <h3 class="text-xl font-bold mb-3 text-yellow-400">O ebook é realmente gratuito?</h3>
-                    <p class="text-gray-300">Sim, o ebook é 100% gratuito. Não há nenhum custo para você recebê-lo, basta preencher o formulário com seus dados.</p>
-                </div>
-                
-                <div class="gold-card rounded-xl p-6">
-                    <h3 class="text-xl font-bold mb-3 text-yellow-400">Como vou receber o ebook?</h3>
-                    <p class="text-gray-300">Após preencher o formulário, você receberá um email com o link para baixar o ebook e os bônus exclusivos. Verifique também sua caixa de spam.</p>
-                </div>
-                
-                <div class="gold-card rounded-xl p-6">
-                    <h3 class="text-xl font-bold mb-3 text-yellow-400">Preciso ter experiência em marketing digital?</h3>
-                    <p class="text-gray-300">Não, o ebook foi desenvolvido para iniciantes. Todo o conteúdo é explicado de forma simples e didática, com um passo a passo completo para você começar do zero.</p>
-                </div>
-                
-                <div class="gold-card rounded-xl p-6">
-                    <h3 class="text-xl font-bold mb-3 text-yellow-400">Por quanto tempo o ebook estará disponível?</h3>
-                    <p class="text-gray-300">Esta é uma oferta por tempo limitado. O ebook e os bônus exclusivos podem ser removidos a qualquer momento, por isso recomendamos que você solicite agora.</p>
-                </div>
-                
-                <div class="gold-card rounded-xl p-6">
-                    <h3 class="text-xl font-bold mb-3 text-yellow-400">Posso compartilhar o ebook com outras pessoas?</h3>
-                    <p class="text-gray-300">O ebook é para uso pessoal. Se você conhece alguém que também poderia se beneficiar deste conteúdo, por favor, compartilhe o link desta página para que a pessoa possa solicitar sua própria cópia.</p>
-                </div>
-            </div>
+        <h3 class="ml-4 text-xl font-bold gold-text">Criação de Conteúdo Viral</h3>
+       </div>
+       <ul class="text-gray-300 space-y-2">
+        <li>• Fórmulas de conteúdo que geram engajamento</li>
+        <li>• Como criar posts que vendem naturalmente</li>
+        <li>• Storytelling para conversão</li>
+        <li>• Planejamento de conteúdo estratégico</li>
+        <li>• Automação de posts e stories</li>
+       </ul>
+      </div>
+      <div class="module-card p-6 rounded-lg">
+       <div class="flex items-center mb-4">
+        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-600 flex items-center justify-center text-black font-bold text-xl">
+         3
         </div>
-    </section>
-
-    <!-- Final CTA Section -->
-    <section class="py-20 bg-gradient-to-b from-dark-light to-dark">
-        <div class="container mx-auto max-w-4xl px-4">
-            <div class="text-center mb-12">
-                <h2 class="section-title">
-                    <span class="gradient-text">ESTÁ NA HORA DE TRANSFORMAR SUA VIDA</span>
-                </h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-                    Não deixe essa oportunidade passar. Solicite agora seu ebook gratuito e comece sua jornada rumo ao sucesso digital.
-                </p>
-                
-                <a href="#formulario" class="cta-button inline-block py-4 px-12 text-xl font-bold text-dark rounded-lg">
-                    QUERO RECEBER MEU EBOOK GRÁTIS AGORA!
-                </a>
-                
-                <p class="mt-6 text-gray-400">Oferta por tempo limitado. Não perca esta oportunidade!</p>
-            </div>
+        <h3 class="ml-4 text-xl font-bold gold-text">Copywriting Persuasivo</h3>
+       </div>
+       <ul class="text-gray-300 space-y-2">
+        <li>• Técnicas de persuasão comprovadas</li>
+        <li>• Como escrever textos que vendem</li>
+        <li>• Gatilhos mentais poderosos</li>
+        <li>• Headlines irresistíveis</li>
+        <li>• Scripts de vendas de alta conversão</li>
+       </ul>
+      </div>
+      <div class="module-card p-6 rounded-lg">
+       <div class="flex items-center mb-4">
+        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-600 flex items-center justify-center text-black font-bold text-xl">
+         4
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-10 bg-dark-light">
-        <div class="container mx-auto max-w-6xl px-4">
-            <div class="text-center">
-                <p class="text-sm text-gray-400 mb-4">© 2023 Método Lucrativo Digital. Todos os direitos reservados.</p>
-                <div class="flex justify-center gap-4">
-                    <a href="#" class="text-sm text-gray-400 hover:text-yellow-400 transition-colors">Termos de Uso</a>
-                    <a href="#" class="text-sm text-gray-400 hover:text-yellow-400 transition-colors">Política de Privacidade</a>
-                </div>
-            </div>
+        <h3 class="ml-4 text-xl font-bold gold-text">Tráfego Pago Lucrativo</h3>
+       </div>
+       <ul class="text-gray-300 space-y-2">
+        <li>• Facebook e Instagram Ads do zero ao avançado</li>
+        <li>• Google Ads para iniciantes</li>
+        <li>• Como criar campanhas lucrativas</li>
+        <li>• Otimização e escalonamento</li>
+        <li>• ROI positivo desde o primeiro dia</li>
+       </ul>
+      </div>
+      <div class="module-card p-6 rounded-lg">
+       <div class="flex items-center mb-4">
+        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-600 flex items-center justify-center text-black font-bold text-xl">
+         5
         </div>
-    </footer>
-
-    <script>
-        // Simple countdown timer
+        <h3 class="ml-4 text-xl font-bold gold-text">Funis de Vendas Automatizados</h3>
+       </div>
+       <ul class="text-gray-300 space-y-2">
+        <li>• Construção de funis de alta conversão</li>
+        <li>• Email marketing que vende no automático</li>
+        <li>• Sequências de nutrição eficazes</li>
+        <li>• Landing pages que convertem</li>
+        <li>• Automação completa de vendas</li>
+       </ul>
+      </div>
+      <div class="module-card p-6 rounded-lg">
+       <div class="flex items-center mb-4">
+        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-600 flex items-center justify-center text-black font-bold text-xl">
+         6
+        </div>
+        <h3 class="ml-4 text-xl font-bold gold-text">Monetização e Escalonamento</h3>
+       </div>
+       <ul class="text-gray-300 space-y-2">
+        <li>• Múltiplas fontes de renda online</li>
+        <li>• Como escalar de R$1.000 para R$10.000+</li>
+        <li>• Produtos digitais lucrativos</li>
+        <li>• Afiliados e parcerias estratégicas</li>
+        <li>• Construção de um império digital</li>
+       </ul>
+      </div>
+     </div>
+     <div class="text-center mt-12">
+      <div class="pulse"><a href="https://kiwify.app/omIfoVi?afid=tOG8EtV6" class="cta-button inline-block py-4 px-8 text-xl font-bold rounded-lg text-black uppercase tracking-wider"> QUERO ACESSO COMPLETO AGORA! </a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- Testimonials Section -->
+  <section class="py-16 bg-gradient-to-b from-black to-gray-900">
+   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+     <h2 class="text-3xl md:text-4xl font-bold mb-2 text-center">O Que Nossos <span class="gold-text">Alunos Dizem</span></h2>
+     <p class="text-center text-gray-300 mb-12">Resultados reais de pessoas reais</p>
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="testimonial-card p-6 rounded-lg">
+       <div class="flex items-center mb-4">
+        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-600 flex items-center justify-center text-black font-bold text-xl">
+         M
+        </div>
+        <div class="ml-4">
+         <h4 class="font-bold">Maria Silva</h4>
+         <p class="text-sm text-gray-400">São Paulo, SP</p>
+        </div>
+       </div>
+       <p class="text-gray-300">"Em apenas 3 meses aplicando o Método Lucrativo, consegui sair do zero e chegar a R$5.000 por mês com marketing de afiliados. O conteúdo é muito didático e o suporte é excepcional!"</p>
+       <div class="mt-4 flex">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 gold-text" viewbox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 gold-text" viewbox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 gold-text" viewbox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 gold-text" viewbox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 gold-text" viewbox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+       </div>
+      </div>
+      <div class="testimonial-card p-6 rounded-lg">
+       <div class="flex items-center mb-4">
+        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-600 flex items-center justify-center text-black font-bold text-xl">
+         C
+        </div>
+        <div class="ml-4">
+         <h4 class="font-bold">Carlos Mendes</h4>
+         <p class="text-sm text-gray-400">Rio de Janeiro, RJ</p>
+        </div>
+       </div>
+       <p class="text-gray-300">"Estava desempregado há 8 meses quando encontrei o Método Lucrativo. Hoje, 4 meses depois, já faturei mais de R$15.000 e finalmente tenho minha liberdade financeira. Recomendo de olhos fechados!"</p>
+       <div class="mt-4 flex">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 gold-text" viewbox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 gold-text" viewbox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 gold-text" viewbox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 gold-text" viewbox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 gold-text" viewbox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+       </div>
+      </div>
+      <div class="testimonial-card p-6 rounded-lg">
+       <div class="flex items-center mb-4">
+        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-600 flex items-center justify-center text-black font-bold text-xl">
+         R
+        </div>
+        <div class="ml-4">
+         <h4 class="font-bold">Rafael Costa</h4>
+         <p class="text-sm text-gray-400">Belo Horizonte, MG</p>
+        </div>
+       </div>
+       <p class="text-gray-300">"As técnicas de copywriting do Módulo 3 transformaram meu negócio. Minhas taxas de conversão aumentaram 300% e agora consigo vender meus produtos sem parecer forçado ou artificial. Melhor investimento que já fiz!"</p>
+       <div class="mt-4 flex">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 gold-text" viewbox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 gold-text" viewbox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 gold-text" viewbox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 gold-text" viewbox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 gold-text" viewbox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+       </div>
+      </div>
+      <div class="testimonial-card p-6 rounded-lg">
+       <div class="flex items-center mb-4">
+        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-600 flex items-center justify-center text-black font-bold text-xl">
+         J
+        </div>
+        <div class="ml-4">
+         <h4 class="font-bold">Juliana Ferreira</h4>
+         <p class="text-sm text-gray-400">Recife, PE</p>
+        </div>
+       </div>
+       <p class="text-gray-300">"Eu não sabia nada sobre marketing digital quando comecei. Hoje, 6 meses depois, meu blog gera mais de R$8.000 por mês em renda passiva. As estratégias de monetização do Módulo 6 são simplesmente geniais!"</p>
+       <div class="mt-4 flex">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 gold-text" viewbox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 gold-text" viewbox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 gold-text" viewbox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 gold-text" viewbox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 gold-text" viewbox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- Bonus Section -->
+  <section class="py-16 bg-black">
+   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+     <h2 class="text-3xl md:text-4xl font-bold mb-2 text-center"><span class="gold-text">Bônus Exclusivos</span> para Ação Rápida</h2>
+     <p class="text-center text-gray-300 mb-12">Disponíveis apenas para quem se inscrever hoje</p>
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bonus-card p-6 rounded-lg">
+       <div class="flex items-center mb-4">
+        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-600 flex items-center justify-center text-black font-bold text-xl">
+         1
+        </div>
+        <h3 class="ml-4 text-xl font-bold gold-text">Acesso ao Grupo VIP</h3>
+       </div>
+       <p class="text-gray-300">Participe do nosso grupo exclusivo no Telegram onde compartilhamos estratégias avançadas, respondemos dúvidas e você pode se conectar com outros empreendedores digitais de sucesso.</p>
+       <p class="mt-2 text-lg font-bold gold-text">Valor: R$497</p>
+      </div>
+      <div class="bonus-card p-6 rounded-lg">
+       <div class="flex items-center mb-4">
+        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-600 flex items-center justify-center text-black font-bold text-xl">
+         2
+        </div>
+        <h3 class="ml-4 text-xl font-bold gold-text">E-book: 101 Headlines Matadoras</h3>
+       </div>
+       <p class="text-gray-300">Uma coleção de títulos e headlines comprovadamente eficazes que você pode adaptar para seus anúncios, emails e páginas de vendas para aumentar drasticamente suas taxas de conversão.</p>
+       <p class="mt-2 text-lg font-bold gold-text">Valor: R$197</p>
+      </div>
+      <div class="bonus-card p-6 rounded-lg">
+       <div class="flex items-center mb-4">
+        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-600 flex items-center justify-center text-black font-bold text-xl">
+         3
+        </div>
+        <h3 class="ml-4 text-xl font-bold gold-text">Mentoria em Grupo (2 sessões)</h3>
+       </div>
+       <p class="text-gray-300">Duas sessões de mentoria em grupo onde você poderá tirar suas dúvidas diretamente com nossos especialistas e receber feedback personalizado sobre suas estratégias de marketing.</p>
+       <p class="mt-2 text-lg font-bold gold-text">Valor: R$397</p>
+      </div>
+      <div class="bonus-card p-6 rounded-lg">
+       <div class="flex items-center mb-4">
+        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-600 flex items-center justify-center text-black font-bold text-xl">
+         4
+        </div>
+        <h3 class="ml-4 text-xl font-bold gold-text">Templates de Funis de Vendas</h3>
+       </div>
+       <p class="text-gray-300">Pacote com 10 templates prontos de funis de vendas de alta conversão que você pode implementar imediatamente em seu negócio, economizando meses de testes e otimizações.</p>
+       <p class="mt-2 text-lg font-bold gold-text">Valor: R$297</p>
+      </div>
+     </div>
+     <div class="mt-12 text-center">
+      <h3 class="text-2xl font-bold mb-4">Valor Total dos Bônus: <span class="gold-text">R$1.388</span></h3>
+      <p class="text-lg text-gray-300 mb-8">Tudo isso GRÁTIS para quem se inscrever hoje!</p>
+      <div class="pulse"><a href="https://kiwify.app/omIfoVi?afid=tOG8EtV6" class="cta-button inline-block py-4 px-8 text-xl font-bold rounded-lg text-black uppercase tracking-wider"> QUERO GARANTIR TODOS OS BÔNUS AGORA! </a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- Guarantee Section -->
+  <section class="py-16 bg-black">
+   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+     <div class="bg-black gold-border rounded-lg p-8 flex flex-col md:flex-row items-center">
+      <div class="w-32 h-32 guarantee-badge rounded-full flex items-center justify-center mb-6 md:mb-0 md:mr-8 flex-shrink-0"><span class="text-xl font-bold">7 DIAS</span>
+      </div>
+      <div>
+       <h3 class="text-2xl font-bold mb-4">Garantia Incondicional de Satisfação</h3>
+       <p class="text-gray-300 mb-4">Estamos tão confiantes que nosso método funciona que oferecemos uma garantia de 7 dias. Se por qualquer motivo você não ficar satisfeito com o conteúdo, basta nos enviar um email e devolveremos 100% do seu investimento, sem perguntas.</p>
+       <p class="text-lg font-bold gold-text">Sem riscos. Sem complicações. Sem desculpas.</p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- FAQ Section -->
+  <section class="py-16 bg-black">
+   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+     <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">Perguntas <span class="gold-text">Frequentes</span></h2>
+     <div class="space-y-6">
+      <div class="bg-black gold-border rounded-lg p-6">
+       <h3 class="text-xl font-bold mb-3 gold-text">Preciso ter experiência prévia com marketing digital?</h3>
+       <p class="text-gray-300">Não, o curso foi desenvolvido para iniciantes e pessoas com experiência. Começamos do zero e avançamos gradualmente até técnicas mais sofisticadas.</p>
+      </div>
+      <div class="bg-black gold-border rounded-lg p-6">
+       <h3 class="text-xl font-bold mb-3 gold-text">Quanto tempo leva para ver resultados?</h3>
+       <p class="text-gray-300">Muitos alunos começam a ver resultados nas primeiras semanas após implementar as estratégias do Módulo 2. No entanto, os resultados podem variar dependendo do seu nicho, dedicação e aplicação das técnicas.</p>
+      </div>
+      <div class="bg-black gold-border rounded-lg p-6">
+       <h3 class="text-xl font-bold mb-3 gold-text">Por quanto tempo terei acesso ao curso?</h3>
+       <p class="text-gray-300">Você terá acesso vitalício ao curso e a todas as atualizações futuras. Uma vez que você se inscreve, o conteúdo é seu para sempre.</p>
+      </div>
+      <div class="bg-black gold-border rounded-lg p-6">
+       <h3 class="text-xl font-bold mb-3 gold-text">Preciso investir em ferramentas ou softwares adicionais?</h3>
+       <p class="text-gray-300">O curso foi projetado para minimizar custos adicionais. Ensinamos estratégias que podem ser implementadas com ferramentas gratuitas ou de baixo custo. Quando recomendamos ferramentas pagas, sempre oferecemos alternativas acessíveis.</p>
+      </div>
+      <div class="bg-black gold-border rounded-lg p-6">
+       <h3 class="text-xl font-bold mb-3 gold-text">Como funciona o suporte?</h3>
+       <p class="text-gray-300">Você terá acesso ao nosso grupo exclusivo onde pode tirar dúvidas diretamente com nossa equipe. Além disso, realizamos sessões de mentoria em grupo regularmente para responder perguntas e oferecer orientação personalizada.</p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- Final CTA Section -->
+  <section class="py-16 bg-gradient-to-b from-black to-black">
+   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+     <h2 class="text-3xl md:text-5xl font-bold mb-6"><span class="block">Está na Hora de</span> <span class="highlight-text text-4xl md:text-6xl">Transformar Sua Vida</span></h2>
+     <p class="text-xl text-gray-300 mb-8">Junte-se a mais de 1.200 alunos que já estão construindo negócios digitais lucrativos e vivendo a vida nos seus próprios termos.</p>
+     <div class="mb-8">
+      <p class="text-2xl mb-2"><span class="line-through text-gray-500">De R$997</span> <span class="gold-text font-bold">Por apenas R$97</span></p>
+      <p class="text-lg text-gray-400">Ou 12x de R$9,70 no cartão</p>
+     </div>
+     <div class="pulse mb-8"><a href="https://kiwify.app/omIfoVi?afid=tOG8EtV6" class="cta-button inline-block py-5 px-10 text-2xl font-bold rounded-lg text-black uppercase tracking-wider"> QUERO COMEÇAR AGORA! </a>
+     </div>
+     <div class="flex items-center justify-center space-x-4 mb-6">
+      <div class="flex items-center">
+       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 gold-text" viewbox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+       </svg><span class="ml-2 text-gray-300">Garantia de 7 dias</span>
+      </div>
+      <div class="flex items-center">
+       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 gold-text" viewbox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+       </svg><span class="ml-2 text-gray-300">Últimas vagas disponíveis</span>
+      </div>
+     </div>
+     <p class="text-sm text-gray-400">Não perca esta oportunidade. O preço aumentará em breve!</p>
+    </div>
+   </div>
+  </section><!-- Sticky CTA -->
+  <div class="sticky-cta py-4" id="sticky-cta">
+   <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+    <div class="mb-4 md:mb-0">
+     <p class="text-lg font-bold gold-text">Oferta Especial: 90% OFF</p>
+     <p class="text-sm text-gray-300">Últimas vagas disponíveis!</p>
+    </div><a href="https://kiwify.app/omIfoVi?afid=tOG8EtV6" class="cta-button py-2 px-6 text-lg font-bold rounded-lg text-black uppercase tracking-wider"> GARANTIR MINHA VAGA </a>
+   </div>
+  </div><!-- Footer -->
+  <footer class="py-8 bg-black border-t border-gray-800">
+   <div class="container mx-auto px-4 text-center">
+    <p class="text-sm text-gray-500 mb-4">© 2023 Método Lucrativo. Todos os direitos reservados.</p>
+    <div class="flex justify-center space-x-4"><a href="#" class="text-sm text-gray-500 hover:text-gold-medium">Termos de Uso</a> <a href="#" class="text-sm text-gray-500 hover:text-gold-medium">Política de Privacidade</a>
+    </div>
+   </div>
+  </footer>
+  <script>
+        // Countdown Timer
         function updateCountdown() {
-            const now = new Date();
-            const hours = 23 - now.getHours();
-            const minutes = 59 - now.getMinutes();
-            const seconds = 59 - now.getSeconds();
+            const hours = document.getElementById('hours');
+            const minutes = document.getElementById('minutes');
+            const seconds = document.getElementById('seconds');
             
-            document.querySelector('.countdown-timer div:nth-child(1) span:first-child').textContent = hours.toString().padStart(2, '0');
-            document.querySelector('.countdown-timer div:nth-child(3) span:first-child').textContent = minutes.toString().padStart(2, '0');
-            document.querySelector('.countdown-timer div:nth-child(5) span:first-child').textContent = seconds.toString().padStart(2, '0');
+            let h = parseInt(hours.textContent);
+            let m = parseInt(minutes.textContent);
+            let s = parseInt(seconds.textContent);
+            
+            s--;
+            
+            if (s < 0) {
+                s = 59;
+                m--;
+                
+                if (m < 0) {
+                    m = 59;
+                    h--;
+                    
+                    if (h < 0) {
+                        h = 24;
+                    }
+                }
+            }
+            
+            hours.textContent = h.toString().padStart(2, '0');
+            minutes.textContent = m.toString().padStart(2, '0');
+            seconds.textContent = s.toString().padStart(2, '0');
         }
         
         setInterval(updateCountdown, 1000);
-        updateCountdown();
         
-        // Form submission (demo only)
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Obrigado por solicitar o ebook! Em breve você receberá um email com o link para download.');
+        // Sticky CTA visibility
+        let lastScrollTop = 0;
+        const stickyCta = document.getElementById('sticky-cta');
+        
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 300) {
+                if (scrollTop > lastScrollTop) {
+                    stickyCta.classList.add('hidden');
+                } else {
+                    stickyCta.classList.remove('hidden');
+                }
+            }
+            
+            lastScrollTop = scrollTop;
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99e283711761cac7',t:'MTc2MzA4MTQxMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99eb1a4f356082ee',t:'MTc2MzE3MTQ3OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
-
